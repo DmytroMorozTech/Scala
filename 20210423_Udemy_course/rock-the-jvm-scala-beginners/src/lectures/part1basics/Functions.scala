@@ -60,7 +60,7 @@ object Functions extends App {
   // 2. Factorial function 1 * 2 * 3 * ... * n
 
   def factorial(n: Int): Long = {
-    if (n <= 0) 1
+    if (n <= 1) 1
     else n * factorial(n - 1)
   }
 
@@ -91,19 +91,19 @@ object Functions extends App {
         For example, 2, 3, 5, 7 and 11 are the first few prime numbers.
    */
 
-    def isPrime(n: Int): Boolean = {
-      // this auxiliary function helps us to find out whether n has any divisors until t
-      def isPrimeUntil(t:Int): Boolean =
-        if (t <=1) true
-        else n % t != 0 && isPrimeUntil(t - 1)
+  def isPrime(n: Int): Boolean = {
+    // this auxiliary function helps us to find out whether n has any divisors until t
+    def isPrimeUntil(t: Int): Boolean =
+      if (t <= 1) true
+      else n % t != 0 && isPrimeUntil(t - 1)
 
-      isPrimeUntil(n/2)
-      // why do we use n/2 ?
-      // Because no numbers are divisible without remainder by numbers
-      // that are in the range [n/2 ... n-1]
-      // e.g. 20/2 = 10   -> The range above n/2 would be [11,12,13,...,19]
-      // And we can clearly see, that 20 will not be divisible by any of these numbers without remainder
-    }
+    isPrimeUntil(n / 2)
+    // why do we use n/2 ?
+    // Because no numbers are divisible without remainder by numbers
+    // that are in the range [n/2 ... n-1]
+    // e.g. 20/2 = 10   -> The range above n/2 would be [11,12,13,...,19]
+    // And we can clearly see, that 20 will not be divisible by any of these numbers without remainder
+  }
 
   println(isPrime(37))
   println(isPrime(2003))

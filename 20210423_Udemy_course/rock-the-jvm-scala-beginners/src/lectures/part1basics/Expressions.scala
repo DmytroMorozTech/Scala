@@ -36,7 +36,7 @@ object Expressions extends App {
   println("--------------------------------")
   while (i < 10) {
     println(i)
-    i +=1
+    i += 1
   }
   // NEVER WRITE THIS AGAIN
   // The worst thing a programmer can do is to write an imperative code with Scala syntax:
@@ -58,7 +58,7 @@ object Expressions extends App {
   // Code-block is an expression in Scala!
   val aCodeBlock = {
     val y = 2
-    val z = y +1
+    val z = y + 1
 
     if (z > 2) "hello" else "goodbye"
     // the value of the whole code-block is the value of this expression,
@@ -71,14 +71,14 @@ object Expressions extends App {
 
   // 2. What's the value of code-block below?
   val someValue = {
-    2<3
+    2 < 3
   }
   println(someValue)
   // this code-block returns Boolean  -> true
 
   // 3. What's the value of code-block below?
   val someOtherValue = {
-    if (someValue) 239 else 987  // this line of code is completely irrelevant
+    if (someValue) 239 else 987 // this line of code is completely irrelevant
     42 // the value of code block will be 42
     // because the value of the code-block is the value, stated in the last line of block
   }
